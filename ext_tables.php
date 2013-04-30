@@ -8,7 +8,7 @@ if(!defined ('TYPO3_MODE')){
  * Default TypoScript
  */
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript/Default', 'BK2K Content Elements');
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript/Replace', 'BK2K Content Elements Replacement');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript/Replacement', 'BK2K Content Elements Replacement');
 
 /**
  * Register Custom Content Element
