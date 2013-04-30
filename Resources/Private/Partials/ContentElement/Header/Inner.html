@@ -1,0 +1,8 @@
+<f:if condition="{data.header_link}">
+    <f:then>
+        <f:link.page pageUid="{data.header_link}">{data.header}</f:link.page>
+    </f:then>
+    <f:else>
+        {data.header}
+    </f:else>
+</f:if>

@@ -1,0 +1,9 @@
+{namespace ce = Bk2k\Bk2kContentElements\ViewHelpers}
+<div id="c{data.uid}">  
+    
+    <f:render section="Main" />
+    <f:if condition="{debug}">
+        <f:debug>{_all}</f:debug>
+    </f:if>
+    
+</div>

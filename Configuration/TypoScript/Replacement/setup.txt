@@ -1,0 +1,8 @@
+bk2k_content = USER
+bk2k_content {
+    userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+    vendorName = Bk2k
+    extensionName = Bk2kContentElements
+    pluginName = ContentElements
+}
+tt_content < bk2k_content

@@ -1,0 +1,16 @@
+plugin.tx_bk2kcontentelements {
+    view {
+        templateRootPath = {$plugin.tx_bk2kcontentelements.view.templateRootPath}
+        partialRootPath = {$plugin.tx_bk2kcontentelements.view.partialRootPath}
+        layoutRootPath = {$plugin.tx_bk2kcontentelements.view.layoutRootPath}
+    }
+    persistence {
+        storagePid = {$plugin.tx_bk2kcontentelements.persistence.storagePid}
+    }
+    mvc {
+        callDefaultActionIfActionCantBeResolved = 1
+    }
+    features {
+        skipDefaultArguments = 1
+    }
+}

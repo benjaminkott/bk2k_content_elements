@@ -1,0 +1,24 @@
+<f:layout name="Default" />
+<f:section name="Main">
+    
+    <f:if condition="{images}">
+        <f:then>
+            <div class="row">
+                <div class=" five columns">
+                    <f:for each="{images}" as="image">
+                        <div>
+                            <f:image src="{image.publicUrl}" id="I{image.uid}" title="{image.title}" alt="{image.alternative}" />
+                        </div>
+                    </f:for>
+                </div>
+                <div class="push_one six columns">
+                    <f:format.html>{data.bodytext}</f:format.html>
+                </div>
+            </div>
+        </f:then>
+        <f:else>
+            <f:format.html>{data.bodytext}</f:format.html>
+        </f:else>
+    </f:if>
+    
+</f:section>

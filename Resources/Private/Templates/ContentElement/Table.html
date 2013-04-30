@@ -1,0 +1,20 @@
+{namespace ce = Bk2k\Bk2kContentElements\ViewHelpers}
+<f:layout name="Default" />
+<f:section name="Main">
+    
+    <f:render partial="ContentElement\Header" arguments="{_all}" />
+    <ce:explode data="{data.bodytext}" as="rows">
+    <table class="mytable">
+        <f:for each="{rows}" as="row" iteration="iterator">                
+        <tr class="{f:if(condition:'{iterator.isFirst}',then:'first ')}{f:if(condition:'{iterator.isLast}',then:'last ')}">
+            <ce:explode data="{row}" as="columns" delimiter="|">
+            <f:for each="{columns}" as="column">
+                <td>{column}</td>
+            </f:for>
+            </ce:explode>
+        </tr>
+        </f:for>
+    </table>
+    </ce:explode>
+    
+</f:section>
