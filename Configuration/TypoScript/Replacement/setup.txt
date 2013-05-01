@@ -5,4 +5,5 @@ bk2k_content {
     extensionName = Bk2kContentElements
     pluginName = ContentElements
 }
-tt_content < bk2k_content
+
+tt_content.stdWrap.override.cObject < bk2k_content

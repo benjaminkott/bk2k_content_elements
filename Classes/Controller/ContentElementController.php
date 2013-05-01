@@ -78,12 +78,10 @@ class ContentElementController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionC
                 $this->forward('table');
                 break;
             default:
-                
+                return "";
                 break;
         }
         
-        $this->view->assign('data',$this->data);
-        $this->view->assign('debug',  \TYPO3\CMS\Core\Utility\GeneralUtility::_GP('debug'));
     }
     
     public function textAction(){

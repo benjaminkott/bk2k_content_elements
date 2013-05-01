@@ -2,7 +2,7 @@
 <f:layout name="Default" />
 <f:section name="Main">
     
-    <f:render partial="ContentElement\Header" arguments="{_all}" />
+    <f:render partial="ContentElement/Header" arguments="{_all}" />
     <ce:explode data="{data.bodytext}" as="rows">
     <table class="mytable">
         <f:for each="{rows}" as="row" iteration="iterator">                

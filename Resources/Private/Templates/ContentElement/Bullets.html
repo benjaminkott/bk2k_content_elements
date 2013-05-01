@@ -2,7 +2,7 @@
 <f:layout name="Default" />
 <f:section name="Main">
     
-    <f:render partial="ContentElement\Header" arguments="{_all}" />
+    <f:render partial="ContentElement/Header" arguments="{_all}" />
     <ce:explode data="{data.bodytext}" as="items">
         <ul class="withicons">
             <f:for each="{items}" as="item">

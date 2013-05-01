@@ -4,13 +4,13 @@
         <f:then>
             <f:if condition="{data.header_layout} == 100">
                 <f:else>
-                    <h{data.header_layout}><f:render partial="ContentElement\Header\Inner" arguments="{_all}" /></h{data.header_layout}>
+                    <h{data.header_layout}><f:render partial="ContentElement/Header/Inner" arguments="{_all}" /></h{data.header_layout}>
                     <f:if condition="{data.subheader}"><h{ce:math(formula:'{data.header_layout} + 1')}>{data.subheader}</h{ce:math(formula:'{data.header_layout} + 1')}></f:if>
                 </f:else>
             </f:if>
         </f:then>
         <f:else>
-            <h1><f:render partial="ContentElement\Header\Inner" arguments="{_all}" /></h1>
+            <h1><f:render partial="ContentElement/Header/Inner" arguments="{_all}" /></h1>
             <f:if condition="{data.subheader}"><h2>{data.subheader}</h2></f:if>
         </f:else>
     </f:if>    
