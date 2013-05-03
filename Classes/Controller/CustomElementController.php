@@ -29,12 +29,7 @@ namespace Bk2k\Bk2kContentElements\Controller;
  * @author Benjamin Kott <info@bk2k.info>
  */
 class CustomElementController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
-    
-    /**
-     * @var \TYPO3\CMS\Core\Resource\FileRepository
-     */
-    protected $fileRepository;    
-    
+        
     /**
      * @var \TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer
      */
@@ -57,10 +52,8 @@ class CustomElementController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCo
      * @return void
      */
     public function renderAction(){
-        $this->fileRepository = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\Core\\Resource\\FileRepository');
-        $images = $this->fileRepository->findByRelation('tt_content', 'image', $this->data['uid']);
         $this->view->assign('data',$this->data);
-        $this->view->assign('images',$images);
     }
+    
 }
 ?>

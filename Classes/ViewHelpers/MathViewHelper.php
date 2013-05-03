@@ -26,7 +26,7 @@ namespace Bk2k\Bk2kContentElements\ViewHelpers;
  ***************************************************************/
 
 /**
- * @version $Id$
+ * @author Benjamin Kott <info@bk2k.info>
  */
 class MathViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
 

@@ -1,0 +1,52 @@
+bk2k_content = FLUIDTEMPLATE
+bk2k_content {
+    file.stdWrap.cObject = CASE
+    file.stdWrap.cObject {
+
+        key.field = CType
+
+        text = TEXT
+        text.value = {$plugin.tx_bk2kcontentelements.view.templateRootPath}ContentElement/Text.html
+        text.insertData = 1
+
+        textpic = TEXT
+        textpic.value = {$plugin.tx_bk2kcontentelements.view.templateRootPath}ContentElement/Textpic.html
+        textpic.insertData = 1
+
+        image = TEXT
+        image.value = {$plugin.tx_bk2kcontentelements.view.templateRootPath}ContentElement/Image.html
+        image.insertData = 1
+
+        header = TEXT
+        header.value = {$plugin.tx_bk2kcontentelements.view.templateRootPath}ContentElement/Header.html
+        header.insertData = 1
+
+        bullets = TEXT
+        bullets.value = {$plugin.tx_bk2kcontentelements.view.templateRootPath}ContentElement/Bullets.html
+        bullets.insertData = 1
+        
+        table = TEXT
+        table.value = {$plugin.tx_bk2kcontentelements.view.templateRootPath}ContentElement/Table.html
+        table.insertData = 1
+
+        default = TEXT
+        default.value = {$plugin.tx_bk2kcontentelements.view.templateRootPath}ContentElement/Empty.html
+        default.insertData = 1
+
+    }
+    partialRootPath = {$plugin.tx_bk2kcontentelements.view.partialRootPath}
+    layoutRootPath = {$plugin.tx_bk2kcontentelements.view.layoutRootPath}
+}
+
+bk2k_content_header = FLUIDTEMPLATE
+bk2k_content_header {
+
+    file = {$plugin.tx_bk2kcontentelements.view.templateRootPath}ContentElement/Header.html
+    partialRootPath = {$plugin.tx_bk2kcontentelements.view.partialRootPath}
+    layoutRootPath = {$plugin.tx_bk2kcontentelements.view.layoutRootPath}
+}
+
+lib.stdheader >
+lib.stdheader < bk2k_content_header
+
+tt_content.stdWrap.override.cObject < bk2k_content

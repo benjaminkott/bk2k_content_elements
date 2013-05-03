@@ -7,8 +7,9 @@ if(!defined ('TYPO3_MODE')){
 /***************
  * Default TypoScript
  */
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript/Default', 'BK2K Content Elements');
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript/Replacement', 'BK2K Content Elements Replacement');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript/Extbase/Default', 'BK2K Extbase CE Default');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript/Extbase/Replacement', 'BK2K Extbase CEs Replacement');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript/Fluidtemplate/Replacement', 'BK2K Fluidtemplate CEs Replacement');
 
 /**
  * Register Custom Content Element

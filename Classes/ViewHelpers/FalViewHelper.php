@@ -28,22 +28,37 @@ namespace Bk2k\Bk2kContentElements\ViewHelpers;
 /**
  * @author Benjamin Kott <info@bk2k.info>
  */
-class ExplodeViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+class FalViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
 
     /**
-     * @param string $data
+     * @author Benjamin Kott <info@bk2k.info>
+     */
+    protected $fileRepository;
+    
+    /**
+     * @param array $data
      * @param string $as
-     * @param string $delimiter
+     * @param string $table
+     * @param string $field
+     * 
      * @return string
      */
-    public function render($data,$as = "items", $delimiter = LF) {
-        if($data){            
-            $items = \TYPO3\CMS\Core\Utility\GeneralUtility::trimExplode($delimiter, $data);
-            $this->templateVariableContainer->add($as, $items);        
-            $content = $this->renderChildren();            
-            $this->templateVariableContainer->remove($as); 
+    public function render($data,$as = "items", $table = "tt_content", $field = "image") {
+        
+        if(is_array($data) && $data['uid'] && $data[$field]){
+            $this->fileRepository = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\Core\\Resource\\FileRepository');
+            $items = $this->fileRepository->findByRelation($table, $field, $data['uid']);
+        }else{
+            $items = NULL;
         }
+        
+        $this->templateVariableContainer->add($as, $items);
+        $content = $this->renderChildren();
+        $this->templateVariableContainer->remove($as); 
+        
         return $content;
+
     }
+    
 }
 ?>

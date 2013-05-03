@@ -1,6 +1,8 @@
+{namespace ce = Bk2k\Bk2kContentElements\ViewHelpers}
 <f:layout name="Default" />
 <f:section name="Main">
     
+    <ce:fal data="{data}" as="images">
     <f:if condition="{images}">
         <f:then>
             <div class="row">
@@ -20,5 +22,6 @@
             <f:format.html>{data.bodytext}</f:format.html>
         </f:else>
     </f:if>
+    </ce:fal>
     
 </f:section>

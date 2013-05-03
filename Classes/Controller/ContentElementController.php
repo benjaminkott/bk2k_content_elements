@@ -28,12 +28,7 @@ namespace Bk2k\Bk2kContentElements\Controller;
 /**
  * @author Benjamin Kott <info@bk2k.info>
  */
-class ContentElementController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
-    
-    /**
-     * @var \TYPO3\CMS\Core\Resource\FileRepository
-     */
-    protected $fileRepository;    
+class ContentElementController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {  
     
     /**
      * @var \TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer
@@ -86,38 +81,26 @@ class ContentElementController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionC
     
     public function textAction(){
         $this->view->assign('data',$this->data);
-        $this->view->assign('debug',  \TYPO3\CMS\Core\Utility\GeneralUtility::_GP('debug'));
     }
     
     public function tableAction(){
         $this->view->assign('data',$this->data);
-        $this->view->assign('debug',  \TYPO3\CMS\Core\Utility\GeneralUtility::_GP('debug'));
     }
     
     public function bulletsAction(){
         $this->view->assign('data',$this->data);
-        $this->view->assign('debug',  \TYPO3\CMS\Core\Utility\GeneralUtility::_GP('debug'));
     }
     
     public function textpicAction(){
-        $this->fileRepository = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\Core\\Resource\\FileRepository');
-        $images = $this->fileRepository->findByRelation('tt_content', 'image', $this->data['uid']);
         $this->view->assign('data',$this->data); 
-        $this->view->assign('images',$images);
-        $this->view->assign('debug',  \TYPO3\CMS\Core\Utility\GeneralUtility::_GP('debug'));
     }
     
     public function headerAction(){
         $this->view->assign('data',$this->data);
-        $this->view->assign('debug',  \TYPO3\CMS\Core\Utility\GeneralUtility::_GP('debug'));
     }
     
     public function imageAction(){
-        $this->fileRepository = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\Core\\Resource\\FileRepository');
-        $images = $this->fileRepository->findByRelation('tt_content', 'image', $this->data['uid']);
         $this->view->assign('data',$this->data);
-        $this->view->assign('images',$images);
-        $this->view->assign('debug',  \TYPO3\CMS\Core\Utility\GeneralUtility::_GP('debug'));
     }
 
 }

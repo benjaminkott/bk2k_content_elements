@@ -1,7 +1,9 @@
+{namespace ce = Bk2k\Bk2kContentElements\ViewHelpers}
 <f:layout name="Default" />
 <f:section name="Main">
     
     <f:render partial="ContentElement/Header" arguments="{_all}" />
+    <ce:fal data="{data}" as="images">
     <f:if condition="{images}">
         <div class="row">
         <f:for each="{images}" as="image">
@@ -11,5 +13,6 @@
         </f:for>
         </div>
     </f:if>
+    </ce:fal>
     
 </f:section>

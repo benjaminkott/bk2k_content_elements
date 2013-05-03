@@ -1,0 +1,42 @@
+plugin.tx_bk2kcontentelements {
+    view {
+        templateRootPath = {$plugin.tx_bk2kcontentelements.view.templateRootPath}
+        partialRootPath = {$plugin.tx_bk2kcontentelements.view.partialRootPath}
+        layoutRootPath = {$plugin.tx_bk2kcontentelements.view.layoutRootPath}
+    }
+    persistence {
+        storagePid = {$plugin.tx_bk2kcontentelements.persistence.storagePid}
+    }
+    mvc {
+        callDefaultActionIfActionCantBeResolved = 1
+    }
+    features {
+        skipDefaultArguments = 1
+    }
+}
+
+bk2k_content = USER
+bk2k_content {
+    userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+    vendorName = Bk2k
+    extensionName = Bk2kContentElements
+    pluginName = ContentElements
+}
+
+bk2k_content_header = USER
+bk2k_content_header {
+    userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+    vendorName = Bk2k
+    extensionName = Bk2kContentElements
+    pluginName = ContentElements
+    switchableControllerActions {
+        ContentElement {
+            1 = header
+        }
+    }
+}
+
+lib.stdheader >
+lib.stdheader < bk2k_content_header
+
+tt_content.stdWrap.override.cObject < bk2k_content
