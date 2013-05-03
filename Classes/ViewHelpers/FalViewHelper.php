@@ -31,7 +31,7 @@ namespace Bk2k\Bk2kContentElements\ViewHelpers;
 class FalViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
 
     /**
-     * @author Benjamin Kott <info@bk2k.info>
+     * @var \TYPO3\CMS\Core\Resource\FileRepository
      */
     protected $fileRepository;
     
