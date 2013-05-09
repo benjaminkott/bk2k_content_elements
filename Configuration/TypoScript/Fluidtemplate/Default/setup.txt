@@ -1,0 +1,10 @@
+bk2k_content_header = FLUIDTEMPLATE
+bk2k_content_header {
+
+    file = {$plugin.tx_bk2kcontentelements.view.templateRootPath}ContentElement/Header.html
+    partialRootPath = {$plugin.tx_bk2kcontentelements.view.partialRootPath}
+    layoutRootPath = {$plugin.tx_bk2kcontentelements.view.layoutRootPath}
+}
+
+lib.stdheader >
+lib.stdheader < bk2k_content_header
